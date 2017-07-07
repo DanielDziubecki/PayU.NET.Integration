@@ -7,6 +7,7 @@ using PayU.Client.ViewModels;
 
 namespace PayU.Client.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly IProductService productService;

@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using PayU.Client.Filters;
 
 namespace PayU.Client
 {
@@ -7,6 +8,7 @@ namespace PayU.Client
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new CustomAuthorize());
         }
     }
 }

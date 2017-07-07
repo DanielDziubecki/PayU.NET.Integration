@@ -34,7 +34,7 @@ namespace AuthorizationService.Formats
 
             var keyByteArray = TextEncodings.Base64Url.Decode(symmetricKeyAsBase64);
 
-            var signingKey = new HmacSigningCredentials(keyByteArray);
+            var signingKey =  new HmacSigningCredentials(keyByteArray);
 
             var issued = data.Properties.IssuedUtc;
             var expires = data.Properties.ExpiresUtc;

@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
+using PayU.Client.Filters;
 using PayU.Client.Services;
+
 
 namespace PayU.Client.Controllers
 {
-    [System.Web.Http.Authorize(Roles = "Daniello")]
+    [CustomAuthorize(Roles = "Janek")]
     public class OrderController : Controller
     {
         private readonly IPaymentService paymentService;

@@ -8,10 +8,7 @@ namespace PayU.Client
     {
         protected void Application_Start()
         {
-            AutofacConfig.Configure();
-            AreaRegistration.RegisterAllAreas();
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+           
         }
     }
 }
