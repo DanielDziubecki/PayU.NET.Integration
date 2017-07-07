@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayU.Service", "PayU.Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayU.Client", "PayU.Client\PayU.Client.csproj", "{D780562B-70C4-4EC7-824F-63886FF4513F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationService", "..\..\..\..\Desktop\JwtOwinAPI\AuthorizationService\AuthorizationService.csproj", "{98258297-7A2A-49BC-A96B-B4A0851F7A28}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationService", "Authorization.Service\AuthorizationService.csproj", "{98258297-7A2A-49BC-A96B-B4A0851F7A28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
