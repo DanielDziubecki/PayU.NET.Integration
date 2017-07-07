@@ -1,0 +1,82 @@
+﻿@model IEnumerable<PayU.Client.ViewModels.ProductViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+
+            <td>
+                @Html.EditorFor(modelItem => item.Quantity, new {htmlAttributes = new {@type = "number" ,id="quantity"+item.Id}})
+            </td>
+
+            <td>
+                <button type="button" id="makeOrder" value="@item.Id">Make order</button>
+            </td>
+        </tr>
+    }
+</table>
+
+<script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous">
+    
+</script>
+
+<script>
+
+    $(document).ready(function() {
+        $('button').click(function () {
+
+            console.log("clicked");
+            var productId = $(this).val();
+
+            var quantityElementName = "#quantity" + productId;
+            var quantity = $(quantityElementName).val();
+
+            var orderDto = {
+                productId: productId,
+                quantity: quantity
+            }
+
+          //  var authHeader =  {'Authorization': 'Bearer '+sessionStorage.getItem("token")}
+
+            $.ajax({
+                //headers: {
+                //    authHeader
+                //},
+                url: "/Order/MakeOrder",
+                type: "post",
+                data: orderDto,
+                success: function (data) {
+                   window.location.href = data.url;
+                }
+            });
+
+        });
+    })
+</script>
