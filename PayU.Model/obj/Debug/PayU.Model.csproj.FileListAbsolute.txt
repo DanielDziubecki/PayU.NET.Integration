@@ -1,0 +1,5 @@
+C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Model\bin\Debug\PayU.Model.dll
+C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Model\bin\Debug\PayU.Model.pdb
+C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Model\obj\Debug\PayU.Model.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Model\obj\Debug\PayU.Model.dll
+C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Model\obj\Debug\PayU.Model.pdb

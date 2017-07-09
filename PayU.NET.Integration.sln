@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayU.Service", "PayU.Service\PayU.Service.csproj", "{0A92DC90-1619-42F3-9CAB-27CCCA3AAD76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayU.Client", "PayU.Client\PayU.Client.csproj", "{D780562B-70C4-4EC7-824F-63886FF4513F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationService", "Authorization.Service\AuthorizationService.csproj", "{98258297-7A2A-49BC-A96B-B4A0851F7A28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayU.Model", "PayU.Model\PayU.Model.csproj", "{ADBDD21F-5F8C-4F91-96EA-93258510855E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{98258297-7A2A-49BC-A96B-B4A0851F7A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98258297-7A2A-49BC-A96B-B4A0851F7A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98258297-7A2A-49BC-A96B-B4A0851F7A28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADBDD21F-5F8C-4F91-96EA-93258510855E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADBDD21F-5F8C-4F91-96EA-93258510855E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADBDD21F-5F8C-4F91-96EA-93258510855E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADBDD21F-5F8C-4F91-96EA-93258510855E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

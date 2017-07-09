@@ -1,7 +1,9 @@
-﻿namespace PayU.Client.Services
+﻿using System.Threading.Tasks;
+
+namespace PayU.Client.Services
 {
     public interface IPaymentService
     {
-        void PayForOrder(OrderDto order);
+        Task PayForOrder(OrderDto order,string token);
     }
 }

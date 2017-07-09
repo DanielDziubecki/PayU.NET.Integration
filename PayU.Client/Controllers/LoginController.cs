@@ -21,12 +21,17 @@ namespace PayU.Client.Controllers
         [HttpPost]
         public async Task<ActionResult> Login(LoginDto loginDto)
         {
-           var token = await loginService.GetToken(loginDto);
+            var token = await loginService.GetToken(loginDto);
 
             if (!string.IsNullOrEmpty(token))
+            {
+                var cookie = new System.Web.HttpCookie("token", token)
+                {
+                    HttpOnly = true
+                };
+                Response.Cookies.Add(cookie);
                 return RedirectToAction("Index", "Product");
-
-
+            }
             return View("LoginFailed");
         }
     }

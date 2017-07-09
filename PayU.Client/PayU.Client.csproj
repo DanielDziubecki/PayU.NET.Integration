@@ -155,6 +155,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\AutofacConfig.cs" />
+    <Compile Include="Filters\TryAddJwtTokenToHeader.cs" />
     <Compile Include="Filters\CustomAuthorize.cs" />
     <Compile Include="Common\AutoMapperMakeOrderProfile.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -198,6 +199,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Attributes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PayU.Model\PayU.Model.csproj">
+      <Project>{adbdd21f-5f8c-4f91-96ea-93258510855e}</Project>
+      <Name>PayU.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

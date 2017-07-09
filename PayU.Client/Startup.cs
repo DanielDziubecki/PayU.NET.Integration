@@ -28,7 +28,6 @@ namespace PayU.Client
             var audience = System.Configuration.ConfigurationManager.AppSettings["appId"];
             var secret = TextEncodings.Base64Url.Decode(System.Configuration.ConfigurationManager.AppSettings["secret"]);
 
-            // Api controllers with an [Authorize] attribute will be validated with JWT
             app.UseJwtBearerAuthentication(
                 new JwtBearerAuthenticationOptions
                 {
@@ -37,7 +36,8 @@ namespace PayU.Client
                     IssuerSecurityTokenProviders = new IIssuerSecurityTokenProvider[]
                     {
                         new SymmetricKeyIssuerSecurityTokenProvider(issuer, secret)
-                    }
+                    },
+                    
                 });
 
         }

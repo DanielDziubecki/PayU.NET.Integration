@@ -1,25 +1,28 @@
-﻿using System.Net;
-using System.Security.Claims;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web.Http.Controllers;
-using System.Web.Http.Filters;
+﻿using System.Security.Claims;
+using System.Web;
 using System.Web.Mvc;
 
 namespace PayU.Client.Filters
 {
     public class CustomAuthorize : AuthorizeAttribute
     {
-        public string Roles { get; set; }
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
-            var x = filterContext.HttpContext.User.Identity as ClaimsIdentity;
+            var token = filterContext.HttpContext.Request.Cookies.Get("token");
+
+            if (token != null)
+                filterContext.HttpContext.Request.Headers.Add("Authorization", $"Bearer {token}");
+
+           
             base.OnAuthorization(filterContext);
         }
 
-        protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
+
+        protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            base.HandleUnauthorizedRequest(filterContext);
+            var x = httpContext.User.Identity as ClaimsIdentity;
+
+            return base.AuthorizeCore(httpContext);
         }
     }
 }
