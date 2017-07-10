@@ -1,0 +1,23 @@
+﻿{
+  "notifyUrl": "https://your.eshop.com/notify",
+  "customerIp": "127.0.0.1",
+  "merchantPosId": "301579",
+  "description": "RTV market",
+  "currencyCode": "PLN",
+  "totalAmount": "15000",
+  "extOrderId": "2kg5w073jdal9nayebajmc",
+  "buyer": {
+    "email": "john.doe@example.com",
+    "phone": "654111654",
+    "firstName": "John",
+    "lastName": "Doe"
+  },
+  "products": [
+    {
+      "name": "Wireless Mouse for Laptop",
+      "unitPrice": "15000",
+      "quantity": "1"
+    }
+  ]
+}
+

@@ -5,6 +5,7 @@ namespace PayU.Model
     public class PayUOrder
     {
         public string Description { get; set; }
+        public string ExtOrderId { get; set; }
         public string TotalAmount { get; set; }
         public string CustomerIp { get; set; }
         public string MerchantPosId { get; set; }

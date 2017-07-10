@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Net.Http.Formatting;
+using System.Reflection;
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
@@ -6,6 +7,8 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.DataHandler.Encoder;
 using Microsoft.Owin.Security.Jwt;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Owin;
 using PayU.Service;
 
@@ -24,9 +27,21 @@ namespace PayU.Service
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             var container = builder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
-            GlobalConfiguration.Configure(WebApiConfig.Register);
 
+            GlobalConfiguration.Configure(WebApiConfig.Register);
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+
+            ConfigureSerializer();
             ConfigureOAuth(app);
+        }
+
+        private void ConfigureSerializer()
+        {
+            var formatters = GlobalConfiguration.Configuration.Formatters;
+            var jsonFormatter = formatters.JsonFormatter;
+            var settings = jsonFormatter.SerializerSettings;
+            settings.Formatting = Formatting.Indented;
+            settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
 
         public void ConfigureOAuth(IAppBuilder app)

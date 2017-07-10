@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 using PayU.Model;
 
 namespace PayU.Client.Services
@@ -28,7 +29,7 @@ namespace PayU.Client.Services
                 new PayUProduct
                 {
                     Name = product.Name,
-                    Price = product.Price,
+                    UnitPrice = product.Price,
                     Quantity = order.Quantity.ToString()
                 }
             };
@@ -39,15 +40,16 @@ namespace PayU.Client.Services
             {
                 ContinueUrl = "http://localhost:51403/Order/OrderMaked",
                 CurrencyCode = "PLN",
-                CustomerIp = "10.10.1.1",
+                CustomerIp = "127.0.0.1",
                 Description = "Super",
-                MerchantPosId = "301562",
+                MerchantPosId = "301579",
+                ExtOrderId = Guid.NewGuid().ToString("N"),
                 NotifyUrl = "http://localhost:51369/notify",
                 Products = payUProducts,
                 TotalAmount = totalAmount
             };
 
-            var serializedOrder = new JavaScriptSerializer().Serialize(payUOrder);
+            var serializedOrder = JsonConvert.SerializeObject(payUOrder);
 
             using (var httpClient = new HttpClient { BaseAddress = new Uri("http://localhost:51369/") })
             {

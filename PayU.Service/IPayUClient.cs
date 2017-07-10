@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using PayU.Model;
 
 namespace PayU.Service
@@ -20,15 +24,15 @@ namespace PayU.Service
             var clientId = System.Configuration.ConfigurationManager.AppSettings["client_id"];
             var secret = System.Configuration.ConfigurationManager.AppSettings["client_secret"];
 
-            var baseAddress = new Uri("https://private-anon-939139d112-payu21.apiary-mock.com/");
+            var baseAddress = new Uri("https://secure.snd.payu.com/");
             using (var httpClient = new HttpClient {BaseAddress = baseAddress})
             {
                 using (var content = new StringContent(
-                    $"grant_type=trusted_merchant&client_id={clientId}&client_secret={secret}",
+                    $"grant_type=client_credentials&client_id={clientId}&client_secret={secret}",
                     System.Text.Encoding.Default,
                     "application/x-www-form-urlencoded"))
                 {
-                    using (var response = await httpClient.PostAsync("pl/standard/user/oauth/authorize", content))
+                    using (var response = await httpClient.PostAsync("/pl/standard/user/oauth/authorize", content))
                     {
                         var responseData = await response.Content.ReadAsStringAsync();
                         if (response.StatusCode == HttpStatusCode.OK)
@@ -49,19 +53,19 @@ namespace PayU.Service
         public async Task<string> MakeOrder(PayUOrder order)
         {
             var token = await GetAccessToken();
-            var jsonOrder = new JavaScriptSerializer().Serialize(order);
+            var jsonOrder = JsonConvert.SerializeObject(order, Formatting.Indented,
+                new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
 
-            var baseAddress = new Uri("https://private-anon-08b66467c4-payu21.apiary-mock.com/");
+            var baseAddress = new Uri("https://secure.snd.payu.com/api/v2_1/orders");
 
-            var webRequestHandler = new WebRequestHandler {AllowAutoRedirect = false};
-
-            using (var httpClient = new HttpClient(webRequestHandler) { BaseAddress = baseAddress })
+         //   var testContent = File.ReadAllText(@"C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Service\testOrder.json");
+            using (var httpClient = new HttpClient { BaseAddress = baseAddress })
             {
-                httpClient.DefaultRequestHeaders.TryAddWithoutValidation("authorization", $"Bearer {token}");
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 using (var content = new StringContent(jsonOrder, System.Text.Encoding.Default, "application/json"))
                 {
-                    using (var response = await httpClient.PostAsync("api/v2_1/orders/", content))
+                    using (var response = await httpClient.PostAsync(baseAddress,content))
                     {
                         if (response.StatusCode == HttpStatusCode.Redirect ||
                             response.StatusCode == HttpStatusCode.MovedPermanently)

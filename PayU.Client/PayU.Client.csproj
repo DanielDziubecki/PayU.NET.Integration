@@ -71,8 +71,8 @@
     <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.Jwt">
-      <HintPath>..\..\..\..\..\Desktop\JwtOwinAPI\AuthorizationService\Bin\Microsoft.Owin.Security.Jwt.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security.Jwt, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Jwt.3.0.1\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
@@ -162,7 +162,7 @@
     <Compile Include="DTO%27s\LoginDto.cs" />
     <Compile Include="DTO%27s\OrderDetailsDto.cs" />
     <Compile Include="DTO%27s\OrderDto.cs" />
-    <Compile Include="Providers\MvcJwtAuthProvider.cs" />
+    <Compile Include="MvcJwtAuthProvider.cs" />
     <Compile Include="Services\ILoginService.cs" />
     <Compile Include="Services\IPaymentService.cs" />
     <Compile Include="Services\LoginService.cs" />
@@ -197,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Attributes\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PayU.Model\PayU.Model.csproj">
