@@ -5,10 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Security.Policy;
 using System.Threading.Tasks;
-using System.Web;
-using System.Web.Http.Routing;
 using System.Web.Script.Serialization;
 using PayU.Model;
 
@@ -23,7 +20,7 @@ namespace PayU.Client.Services
             this.productService = productService;
         }
 
-        public async Task PayForOrder(OrderDto order,string token)
+        public async Task<string> PayForOrder(OrderDto order,string token)
         {
             var product = productService.GetProductById(Guid.Parse(order.ProductId));
             var payUProducts = new List<PayUProduct>
@@ -35,7 +32,9 @@ namespace PayU.Client.Services
                     Quantity = order.Quantity.ToString()
                 }
             };
-            var totalAmount = payUProducts.Sum(x=>double.Parse(x.Price)*int.Parse(x.Quantity)).ToString();
+            var totalAmount = 10.ToString();
+                //payUProducts.Sum(x=>double.Parse(x.Price)*int.Parse(x.Quantity)).ToString();
+
             var payUOrder = new PayUOrder
             {
                 ContinueUrl = "http://localhost:51403/Order/OrderMaked",
@@ -60,10 +59,7 @@ namespace PayU.Client.Services
                 {
                     using (var response = await httpClient.PostAsync("Order", content))
                     {
-                        var responseData = await response.Content.ReadAsStringAsync();
-                        if (response.StatusCode == HttpStatusCode.OK)
-                        {
-                        }
+                        return await response.Content.ReadAsStringAsync();
                     }
                 }
             }

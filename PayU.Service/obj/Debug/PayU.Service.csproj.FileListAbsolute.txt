@@ -144,3 +144,23 @@ C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Service\b
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Service\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Service\bin\System.IdentityModel.Tokens.Jwt.pdb
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Service\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Autofac.dll
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Autofac.Integration.WebApi.dll
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Microsoft.Owin.dll
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Microsoft.Owin.Security.dll
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Microsoft.Owin.Security.Jwt.dll
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Owin.dll
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\PayU.Model.dll
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\PayU.Model.pdb
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Autofac.xml
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Autofac.Integration.WebApi.xml
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Microsoft.Owin.xml
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Microsoft.Owin.Security.xml
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Microsoft.Owin.Security.Jwt.xml
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Service\bin\System.IdentityModel.Tokens.Jwt.xml

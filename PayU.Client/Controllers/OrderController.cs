@@ -2,13 +2,12 @@
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using AutoMapper;
-using PayU.Client.Filters;
 using PayU.Client.Services;
 
 
 namespace PayU.Client.Controllers
 {
-   // [CustomAuthorize]
+   [Authorize]
     public class OrderController : Controller
     {
         private readonly IPaymentService paymentService;
@@ -27,13 +26,11 @@ namespace PayU.Client.Controllers
 
             if (token != null)
             {
-              await  paymentService.PayForOrder(order, token.Value);
-                var url = Url.Action("OrderMaked");
-
+                var redirect = await  paymentService.PayForOrder(order, token.Value);
                 return new JsonResult
                 {
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-                    Data = new Dictionary<string, string> { { "url", url } }
+                    Data = new Dictionary<string, string> { { "url", redirect } }
                 };
             }
 

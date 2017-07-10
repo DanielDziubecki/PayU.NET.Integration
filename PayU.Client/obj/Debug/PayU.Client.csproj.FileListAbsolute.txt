@@ -219,3 +219,5 @@ C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\ob
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\obj\Debug\PayU.Client.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\bin\PayU.Model.dll
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\bin\PayU.Model.pdb
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Client\bin\PayU.Model.dll
+C:\Users\ddziub\Desktop\PayU.NET.Integration\PayU.Client\bin\PayU.Model.pdb

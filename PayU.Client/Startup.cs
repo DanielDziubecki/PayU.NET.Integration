@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Security.Claims;
+using System.Web.Helpers;
+using System.Web.Mvc;
 using System.Web.Routing;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
@@ -6,6 +8,7 @@ using Microsoft.Owin.Security.DataHandler.Encoder;
 using Microsoft.Owin.Security.Jwt;
 using Owin;
 using PayU.Client;
+using PayU.Client.Providers;
 
 [assembly: OwinStartup(typeof(Startup))]
 namespace PayU.Client
@@ -18,7 +21,7 @@ namespace PayU.Client
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-
+            AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.NameIdentifier;
             ConfigureOAuth(app);
         }
 
@@ -37,6 +40,7 @@ namespace PayU.Client
                     {
                         new SymmetricKeyIssuerSecurityTokenProvider(issuer, secret)
                     },
+                    Provider = new MvcJwtAuthProvider()
                     
                 });
 

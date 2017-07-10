@@ -1,5 +1,4 @@
-﻿using System.Net;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Http;
 using PayU.Model;
 
@@ -20,7 +19,7 @@ namespace PayU.Service.Controllers
         public async Task<string> MakeOrder(PayUOrder order)
         {
             var redirect = await payUClient.MakeOrder(order);
-            return "";
+            return redirect;
         }
 
         [HttpPost]

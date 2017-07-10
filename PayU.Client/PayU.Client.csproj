@@ -155,8 +155,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\AutofacConfig.cs" />
-    <Compile Include="Filters\TryAddJwtTokenToHeader.cs" />
-    <Compile Include="Filters\CustomAuthorize.cs" />
     <Compile Include="Common\AutoMapperMakeOrderProfile.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
@@ -164,6 +162,7 @@
     <Compile Include="DTO%27s\LoginDto.cs" />
     <Compile Include="DTO%27s\OrderDetailsDto.cs" />
     <Compile Include="DTO%27s\OrderDto.cs" />
+    <Compile Include="Providers\MvcJwtAuthProvider.cs" />
     <Compile Include="Services\ILoginService.cs" />
     <Compile Include="Services\IPaymentService.cs" />
     <Compile Include="Services\LoginService.cs" />
@@ -198,7 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Attributes\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PayU.Model\PayU.Model.csproj">

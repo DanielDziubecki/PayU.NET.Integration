@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using PayU.Model;
@@ -49,22 +48,25 @@ namespace PayU.Service
 
         public async Task<string> MakeOrder(PayUOrder order)
         {
-            var baseAddress = new Uri("https://private-anon-939139d112-payu21.apiary-mock.com/");
             var token = await GetAccessToken();
             var jsonOrder = new JavaScriptSerializer().Serialize(order);
-            using (var httpClient = new HttpClient {BaseAddress = baseAddress})
+
+            var baseAddress = new Uri("https://private-anon-08b66467c4-payu21.apiary-mock.com/");
+
+            var webRequestHandler = new WebRequestHandler {AllowAutoRedirect = false};
+
+            using (var httpClient = new HttpClient(webRequestHandler) { BaseAddress = baseAddress })
             {
-                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                using (var content = new StringContent(
-                    jsonOrder,
-                    System.Text.Encoding.Default,
-                    "application/json"))
+                httpClient.DefaultRequestHeaders.TryAddWithoutValidation("authorization", $"Bearer {token}");
+
+                using (var content = new StringContent(jsonOrder, System.Text.Encoding.Default, "application/json"))
                 {
-                    using (var response = await httpClient.PostAsync("api/v2_1/orders", content))
+                    using (var response = await httpClient.PostAsync("api/v2_1/orders/", content))
                     {
-                        var responseData = await response.Content.ReadAsStringAsync();
-                        if (response.StatusCode == HttpStatusCode.OK)
+                        if (response.StatusCode == HttpStatusCode.Redirect ||
+                            response.StatusCode == HttpStatusCode.MovedPermanently)
                         {
+                          return response.Headers.Location.AbsoluteUri;
                         }
                     }
                 }

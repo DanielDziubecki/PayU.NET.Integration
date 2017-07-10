@@ -4,6 +4,6 @@ namespace PayU.Client.Services
 {
     public interface IPaymentService
     {
-        Task PayForOrder(OrderDto order,string token);
+        Task<string> PayForOrder(OrderDto order,string token);
     }
 }
