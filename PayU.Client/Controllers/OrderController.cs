@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using PayU.Client.Attributes;
 using PayU.Client.Services;
 
 
 namespace PayU.Client.Controllers
 {
-    [Authorize(Roles = "Manager")]
+   // [ClaimsAuthorization(ClaimType = "x",ClaimValue = "y")]
     public class OrderController : Controller
     {
         private readonly IPaymentService paymentService;
