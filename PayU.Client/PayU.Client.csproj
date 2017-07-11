@@ -83,6 +83,7 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
@@ -160,9 +161,8 @@
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="DTO%27s\LoginDto.cs" />
-    <Compile Include="DTO%27s\OrderDetailsDto.cs" />
     <Compile Include="DTO%27s\OrderDto.cs" />
-    <Compile Include="MvcJwtAuthProvider.cs" />
+    <Compile Include="Providers\MvcJwtAuthProvider.cs" />
     <Compile Include="Services\ILoginService.cs" />
     <Compile Include="Services\IPaymentService.cs" />
     <Compile Include="Services\LoginService.cs" />
@@ -172,7 +172,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IProductService.cs" />

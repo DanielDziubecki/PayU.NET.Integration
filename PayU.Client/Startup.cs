@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.IdentityModel.Tokens;
+using System.Security.Claims;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -41,7 +42,6 @@ namespace PayU.Client
                         new SymmetricKeyIssuerSecurityTokenProvider(issuer, secret)
                     },
                     Provider = new MvcJwtAuthProvider()
-                    
                 });
 
         }

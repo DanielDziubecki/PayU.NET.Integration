@@ -12,6 +12,7 @@ namespace PayU.Model
         public string ContinueUrl { get; set; }
         public string NotifyUrl { get; set; }
         public string CurrencyCode { get; set; }
+        public PayUBuyer Buyer { get; set; }
         public IEnumerable<PayUProduct> Products { get; set; }
     }
 }

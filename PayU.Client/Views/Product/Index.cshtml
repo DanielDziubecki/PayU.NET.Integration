@@ -63,17 +63,12 @@
                 quantity: quantity
             }
 
-          //  var authHeader =  {'Authorization': 'Bearer '+sessionStorage.getItem("token")}
-
             $.ajax({
-                //headers: {
-                //    authHeader
-                //},
                 url: "/Order/MakeOrder",
                 type: "post",
                 data: orderDto,
                 success: function (data) {
-                   window.location.href = data.url;
+                    window.location.href = data.url;
                 }
             });
 

@@ -1,4 +1,3 @@
-C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\obj\Debug\PayU.Client.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\bin\roslyn\csc.exe
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\bin\roslyn\csc.exe.config
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\bin\roslyn\csc.rsp
@@ -75,5 +74,6 @@ C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\bi
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\bin\System.Web.Webpages.Razor.xml
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\bin\System.Web.Helpers.xml
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\bin\System.Web.Mvc.xml
+C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\obj\Debug\PayU.Client.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\obj\Debug\PayU.Client.dll
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\PayU.Client\obj\Debug\PayU.Client.pdb

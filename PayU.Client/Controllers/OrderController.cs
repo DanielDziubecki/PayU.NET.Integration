@@ -1,23 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using AutoMapper;
 using PayU.Client.Services;
 
 
 namespace PayU.Client.Controllers
 {
-   [Authorize]
+    [Authorize(Roles = "Manager")]
     public class OrderController : Controller
     {
         private readonly IPaymentService paymentService;
-        private readonly IMapper mapper;
 
-      
-        public OrderController(IPaymentService paymentService , IMapper mapper)
+        public OrderController(IPaymentService paymentService)
         {
             this.paymentService = paymentService;
-            this.mapper = mapper;
         }
        
         public async Task<ActionResult> MakeOrder(OrderDto order)
@@ -26,14 +22,14 @@ namespace PayU.Client.Controllers
 
             if (token != null)
             {
-                var redirect = await  paymentService.PayForOrder(order, token.Value);
+                var redirect = (await paymentService.GetRedirectUrl(order, token.Value)).Replace("\"", "");
+
                 return new JsonResult
                 {
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet,
                     Data = new Dictionary<string, string> { { "url", redirect } }
                 };
             }
-
             return null;
 
         }

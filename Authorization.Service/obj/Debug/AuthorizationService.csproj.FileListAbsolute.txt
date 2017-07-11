@@ -129,5 +129,6 @@ C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\Authorization.
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\Authorization.Service\bin\System.Web.Http.Owin.xml
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\Authorization.Service\bin\System.Web.Http.WebHost.xml
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\Authorization.Service\bin\Thinktecture.IdentityModel.Core.pdb
+C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\Authorization.Service\obj\Debug\AuthorizationService.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\Authorization.Service\obj\Debug\AuthorizationService.dll
 C:\Users\Daniel\Desktop\git hub pet projects\PayU.NET.Integration\Authorization.Service\obj\Debug\AuthorizationService.pdb

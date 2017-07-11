@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Http;
 using PayU.Model;
+using PayU.Service.Providers;
 
 namespace PayU.Service.Controllers
 {

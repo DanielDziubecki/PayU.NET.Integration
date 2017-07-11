@@ -13,25 +13,25 @@ namespace PayU.Client.Services
             {
                 Id = Guid.Parse("E83C46DC-CBA0-4D8E-9B0B-8FCC23365571"),
                 Name = "Phone",
-                Price = "235.55"
+                Price = "235"
             },
             new Product
             {
                 Id = Guid.Parse("4941E719-1AF9-4591-8BEC-A9F5391FF364"),
                 Name = "PC",
-                Price = "50.30"
+                Price = "50"
             },
             new Product
             {
                 Id =Guid.Parse("2EDA8427-E858-4813-B626-DB7EBA8FF8FB"),
                 Name = "GPU",
-                Price = "80.22"
+                Price = "80"
             },
             new Product
             {
                 Id = Guid.Parse("05242A03-637C-48CC-80A9-393365F5F973"),
                 Name = "Keyboard",
-                Price = "10.20"
+                Price = "10"
             }
         };
 

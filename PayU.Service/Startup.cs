@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
 using PayU.Service;
+using PayU.Service.Providers;
 
 [assembly: OwinStartup(typeof(Startup))]
 namespace PayU.Service
