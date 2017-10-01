@@ -1,7 +1,0 @@
-C:\Users\Daniel\Desktop\Projects\Github\PayU.NET.Integration\Authorization.Service\obj\Debug\Auth.Service.csproj.CoreCompileInputs.cache
-C:\Users\Daniel\Desktop\Projects\Github\PayU.NET.Integration\Authorization.Service\obj\Debug\AuthorizationService.dll
-C:\Users\Daniel\Desktop\Projects\Github\PayU.NET.Integration\Authorization.Service\obj\Debug\AuthorizationService.pdb
-C:\Users\Daniel\Desktop\Projects\Github\PayU.NET.Integration\Auth.Service\obj\Debug\Auth.Service.csprojResolveAssemblyReference.cache
-C:\Users\Daniel\Desktop\Projects\Github\PayU.NET.Integration\Auth.Service\obj\Debug\Auth.Service.csproj.CoreCompileInputs.cache
-C:\Users\Daniel\Desktop\Projects\Github\PayU.NET.Integration\Auth.Service\obj\Debug\AuthorizationService.dll
-C:\Users\Daniel\Desktop\Projects\Github\PayU.NET.Integration\Auth.Service\obj\Debug\AuthorizationService.pdb
