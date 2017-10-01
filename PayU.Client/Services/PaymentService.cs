@@ -76,6 +76,8 @@ namespace PayU.Client.Services
                     Phone = "12332111"
                 }
             };
+
+          var test =  JsonConvert.SerializeObject(payUOrder);
             return payUOrder;
         }
     }

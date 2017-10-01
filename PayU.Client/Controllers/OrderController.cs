@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using PayU.Client.Attributes;
 using PayU.Client.Services;
 
 

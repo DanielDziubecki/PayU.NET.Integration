@@ -19,17 +19,8 @@ namespace PayU.Service.Controllers
         [Route("order")]
         public async Task<string> MakeOrder(PayUOrder order)
         {
-            var redirect = await payUClient.MakeOrder(order);
-            return redirect;
+            var orderUrl = await payUClient.MakeOrder(order);
+            return orderUrl;
         }
-
-        [HttpPost]
-        [Route("notify")]
-        public async Task<string> Notify(dynamic notify)
-        {
-           
-            return "";
-        }
-
     }
 }
